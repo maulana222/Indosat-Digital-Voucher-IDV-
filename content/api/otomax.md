@@ -8,22 +8,10 @@ Base URL:
 https://idv-api.pixlycode.app
 ```
 
-## Prefix & alias
-
-| Path | Keterangan |
-|------|------------|
-| `/api/otomax` | **Path utama** |
-| `/api/v2/otomax` | Alias (kompatibilitas lama) |
-| `/reseller/api/v2/otomax` | Alias (template IP Center lama) |
-
-**Maksud alias:** URL lain ke **handler yang sama**. Cukup isi **satu** di IP Center — disarankan path utama.
-
-Contoh ekuivalen:
+Prefix (satu path saja):
 
 ```text
-https://idv-api.pixlycode.app/api/otomax/trx?...
-https://idv-api.pixlycode.app/api/v2/otomax/trx?...
-https://idv-api.pixlycode.app/reseller/api/v2/otomax/trx?...
+/api/otomax
 ```
 
 Credential: `memberID`, `pin`, `password` (dari penyedia akun). IP server OtoMax harus di-whitelist.
