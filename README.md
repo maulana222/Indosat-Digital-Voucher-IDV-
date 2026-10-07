@@ -1,28 +1,29 @@
 # MkDocs Documentation
 
-Dokumentasi project ini dibuat dengan **MkDocs**.
+Dokumentasi project ini dibuat dengan **MkDocs Material**.
+
+## Lihat di UI (online)
+
+**GitHub Pages:** [https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/](https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/)
 
 ## Struktur penting
 
-- `docs/mkdocs.yml`: konfigurasi MkDocs
-- `docs/content/`: semua halaman Markdown (`*.md`) yang ditampilkan di website dokumentasi
-- `site/`: output hasil build (dibuat oleh MkDocs)
+- `docs/mkdocs.yml` — konfigurasi MkDocs + tema
+- `docs/content/` — halaman Markdown
+- `docs/overrides/` — template (announce bar)
+- `docs/content/stylesheets/extra.css` — desain kustom
+- `site/` — output build (di root project)
 
-## Cara menjalankan
+## Cara menjalankan lokal
 
-### Dari folder root project (`IDV/`)
+Dari root project (`IDV/`):
 
 ```bash
 pip install -r requirements-docs.txt
 mkdocs serve -f docs/mkdocs.yml
 ```
 
-### Dari folder `docs/`
-
-```bash
-cd docs
-mkdocs serve
-```
+Buka biasanya `http://127.0.0.1:8000`.
 
 ## Build statis
 
@@ -30,3 +31,4 @@ mkdocs serve
 mkdocs build -f docs/mkdocs.yml
 ```
 
+Deploy ke GitHub Pages: publish isi folder `site/` ke branch/pages yang dipakai repo [Indosat-Digital-Voucher-IDV-](https://github.com/maulana222/Indosat-Digital-Voucher-IDV-).

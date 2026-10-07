@@ -1,0 +1,173 @@
+/* IDV Gateway docs — teal slate + amber (bukan purple default Material) */
+:root,
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #0f3d3e;
+  --md-primary-fg-color--light: #1a5c5e;
+  --md-primary-fg-color--dark: #0a2a2b;
+  --md-primary-bg-color: #f4f7f6;
+  --md-accent-fg-color: #c45c26;
+  --md-accent-fg-color--transparent: rgba(196, 92, 38, 0.12);
+  --md-typeset-a-color: #1a5c5e;
+  --md-default-bg-color: #f4f7f6;
+  --md-code-bg-color: #e8eeec;
+  --idv-hero-glow: radial-gradient(ellipse 80% 60% at 10% 0%, rgba(26, 92, 94, 0.18), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 90% 10%, rgba(196, 92, 38, 0.12), transparent 50%);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #2a8a8c;
+  --md-primary-fg-color--light: #3aa3a5;
+  --md-primary-fg-color--dark: #1a5c5e;
+  --md-accent-fg-color: #e08a4f;
+  --md-accent-fg-color--transparent: rgba(224, 138, 79, 0.16);
+  --md-typeset-a-color: #5ec4c6;
+  --md-default-bg-color: #121a1a;
+  --md-code-bg-color: #1a2626;
+  --idv-hero-glow: radial-gradient(ellipse 70% 50% at 15% 0%, rgba(42, 138, 140, 0.22), transparent 55%),
+    radial-gradient(ellipse 45% 35% at 85% 5%, rgba(224, 138, 79, 0.14), transparent 50%);
+}
+
+.md-header {
+  background: linear-gradient(120deg, #0f3d3e 0%, #16494a 55%, #1a3d2e 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 8px 24px rgba(15, 61, 62, 0.25);
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  background: linear-gradient(120deg, #0c2223 0%, #123334 60%, #0f1f1a 100%);
+}
+
+.md-tabs {
+  background: transparent;
+}
+
+.md-announce {
+  background: #0a2a2b;
+  color: #e8f0ef;
+  font-size: 0.78rem;
+}
+
+.md-announce a {
+  color: #e08a4f;
+  font-weight: 600;
+}
+
+.md-main {
+  background-image: var(--idv-hero-glow);
+  background-attachment: fixed;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  border-bottom: 2px solid rgba(15, 61, 62, 0.15);
+  padding-bottom: 0.35em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  border-bottom-color: rgba(42, 138, 140, 0.35);
+}
+
+.md-typeset h2 {
+  font-weight: 650;
+  color: var(--md-primary-fg-color);
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0;
+  border-left-width: 3px;
+}
+
+.md-typeset table:not([class]) {
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid rgba(15, 61, 62, 0.12);
+}
+
+.md-typeset code {
+  border-radius: 2px;
+}
+
+.md-button {
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+.md-button--primary {
+  background-color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: #fff;
+}
+
+.md-footer {
+  background: #0a2a2b;
+}
+
+.idv-hero {
+  margin: 0 0 1.75rem;
+  padding: 1.75rem 1.5rem 1.5rem;
+  background: linear-gradient(135deg, rgba(15, 61, 62, 0.92), rgba(22, 73, 74, 0.88) 55%, rgba(26, 61, 46, 0.9));
+  color: #f4f7f6;
+  border-left: 4px solid #c45c26;
+}
+
+.idv-hero h1 {
+  margin: 0 0 0.4rem;
+  color: #fff !important;
+  border: none !important;
+  font-size: 1.85rem;
+}
+
+.idv-hero p {
+  margin: 0;
+  max-width: 40rem;
+  opacity: 0.92;
+  font-size: 1.02rem;
+}
+
+.idv-hero-actions {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.idv-hero-actions a {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  background: #c45c26;
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.idv-hero-actions a.secondary {
+  background: transparent;
+  border: 1px solid rgba(244, 247, 246, 0.45);
+  color: #f4f7f6 !important;
+}
+
+.idv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.idv-card {
+  padding: 1rem 1.1rem;
+  background: var(--md-code-bg-color);
+  border-top: 3px solid var(--md-primary-fg-color);
+}
+
+.idv-card h3 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.idv-card p {
+  margin-bottom: 0;
+  font-size: 0.88rem;
+  opacity: 0.9;
+}

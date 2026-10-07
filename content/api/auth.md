@@ -9,7 +9,7 @@ Semua endpoint auth berada di prefix ` /api/auth `.
 Contoh:
 
 ```bash
-curl -X POST "http://localhost:6969/api/auth/login" \
+curl -X POST "https://idv-api.pixlycode.app/api/auth/login" \
   -H "Content-Type: application/json" \
   -d "{\"email\":\"you@example.com\",\"password\":\"your-password\"}"
 ```
@@ -21,7 +21,7 @@ Response umumnya mengembalikan JWT. JWT digunakan untuk endpoint private lain.
 `GET /api/auth/profile` (private)
 
 ```bash
-curl "http://localhost:6969/api/auth/profile" \
+curl "https://idv-api.pixlycode.app/api/auth/profile" \
   -H "Authorization: Bearer <jwt>"
 ```
 

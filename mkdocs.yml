@@ -1,23 +1,103 @@
 site_name: IDV Gateway
-site_description: Dokumentasi IDV Gateway (Backend API + Dashboard)
+site_description: Dokumentasi IDV Gateway — API transaksi, OtoMax, H2H, dan dashboard multi-admin
+site_url: https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/
+repo_url: https://github.com/maulana222/Indosat-Digital-Voucher-IDV-
+repo_name: maulana222/Indosat-Digital-Voucher-IDV-
+edit_uri: edit/main/docs/content/
 
 # MkDocs melarang docs_dir sama dengan folder config; halaman ada di subfolder
 docs_dir: content
 # Output build di root project (bukan di dalam docs/)
-site_dir: ../site
+site_dir: site
 
 theme:
-  name: mkdocs
+  name: material
+  language: id
+  custom_dir: overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Mode gelap
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Mode terang
+  font:
+    text: DM Sans
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/lan-connect
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: material/web
+      link: https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/
+      name: Dokumentasi online
+  generator: false
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
 
 nav:
-  - Overview: index.md
+  - Beranda: index.md
   - Fitur: features.md
   - Quickstart: getting-started.md
+  - Docker: docker.md
   - Konfigurasi: configuration.md
+  - Architecture:
+      - Isolasi per admin: architecture/per-admin.md
+      - Upstream H2H: architecture/upstream-h2h.md
   - API:
       - Ringkasan: api/overview.md
       - Auth: api/auth.md
       - Transaction: api/transaction.md
+      - OtoMax (HTTP GET): api/otomax.md
+      - Price List: api/price-list.md
+      - Product Detail: api/product-detail.md
       - Callback: api/callback.md
       - IDV: api/idv.md
   - Security: security.md

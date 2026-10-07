@@ -1,9 +1,12 @@
 ## Quickstart
 
+Baca versi UI online: [Dokumentasi IDV Gateway](https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/)
+
 ### Prasyarat
 
 - Node.js (untuk backend dan dashboard)
 - MySQL (untuk database)
+- Setelah clone: jalankan migrasi DB (`cd backend && npm run migrate`) termasuk **028–029**
 
 ### Menjalankan backend
 
@@ -16,7 +19,8 @@ npm install
 npm start
 ```
 
-Default port: `6969`
+Production API: `https://idv-api.pixlycode.app`  
+Lokal default port: `6969`
 
 ### Menjalankan dashboard
 

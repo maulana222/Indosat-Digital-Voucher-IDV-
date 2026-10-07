@@ -66,8 +66,23 @@ LOG_LEVEL=info
 LOG_FILE=logs/app.log
 ```
 
+### Migrasi database
+
+Dari root atau `backend/`:
+
+```bash
+cd backend
+npm run migrate
+npm run migrate:status
+```
+
+Pastikan **028** (`default_cb_url`) dan **029** (`uk_user_key` pada `settings`) applied. Tanpa 029, cookie/H2H per admin bisa menimpa baris global.
+
+Docker: gunakan `.env.docker` (lihat `.env.docker.example`) lalu rebuild/restart service setelah migrate.
+
 ### Catatan
 
 - Jangan commit file `.env`.
 - Untuk production, gunakan nilai secret yang kuat dan batasi `CORS_ORIGIN`.
+- Dokumentasi online: [maulana222.github.io/Indosat-Digital-Voucher-IDV-](https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/)
 
