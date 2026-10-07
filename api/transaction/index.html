@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Dokumentasi IDV Gateway — API transaksi, OtoMax, H2H, dan dashboard multi-admin">
+        <meta name="description" content="Dokumentasi Open API untuk integrasi transaksi, price list, product detail, callback, dan OtoMax">
       
       
       
         <link rel="canonical" href="https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/api/transaction/">
       
       
-        <link rel="prev" href="../auth/">
+        <link rel="prev" href="../../authentication/">
       
       
-        <link rel="next" href="../otomax/">
+        <link rel="next" href="../price-list/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Transaction - IDV Gateway</title>
+        <title>Transaksi - IDV Open API</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#transaction-api" class="md-skip">
+        <a href="#transaksi" class="md-skip">
           Lewati ke isi
         </a>
       
@@ -91,10 +91,8 @@
           <div class="md-banner__inner md-grid md-typeset">
             
             
-  Dokumentasi online:
-  <a href="https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/">
-    maulana222.github.io/Indosat-Digital-Voucher-IDV-
-  </a>
+  Open API · Base URL
+  <a href="https://idv-api.pixlycode.app">https://idv-api.pixlycode.app</a>
 
           </div>
           
@@ -107,10 +105,10 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="IDV Gateway" class="md-header__button md-logo" aria-label="IDV Gateway" data-md-component="logo">
+    <a href="../.." title="IDV Open API" class="md-header__button md-logo" aria-label="IDV Open API" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1c-1.11 0-2 .89-2 2v4c0 1.11.89 2 2 2H1v2h12V9h-3c1.11 0 2-.89 2-2V3c0-1.11-.89-2-2-2zm0 2h6v4H4zM3 13v7h7v-2H5v-5zm11 0c-1.11 0-2 .89-2 2v4c0 1.11.89 2 2 2h-3v2h12v-2h-3c1.11 0 2-.89 2-2v-4c0-1.11-.89-2-2-2zm0 2h6v4h-6z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 7H5a2 2 0 0 0-2 2v8h2v-4h2v4h2V9a2 2 0 0 0-2-2m0 4H5V9h2m7-2h-4v10h2v-4h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2m0 4h-2V9h2m6 0v6h1v2h-4v-2h1V9h-1V7h4v2Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -121,13 +119,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            IDV Gateway
+            IDV Open API
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Transaction
+              Transaksi
             
           </span>
         </div>
@@ -259,32 +257,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../features/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Fitur
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
       <a href="../../getting-started/" class="md-tabs__link">
         
   
   
     
   
-  Quickstart
+  Memulai
 
       </a>
     </li>
@@ -297,13 +276,34 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../docker/" class="md-tabs__link">
+      <a href="../../authentication/" class="md-tabs__link">
         
   
   
     
   
-  Docker
+  Autentikasi
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Transaksi
 
       </a>
     </li>
@@ -316,13 +316,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../configuration/" class="md-tabs__link">
+      <a href="../price-list/" class="md-tabs__link">
         
   
   
     
   
-  Konfigurasi
+  Price List
 
       </a>
     </li>
@@ -334,40 +334,17 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../architecture/per-admin/" class="md-tabs__link">
-          
-  
-  
-  Architecture
-
-        </a>
-      </li>
-    
-  
-
-      
+    <li class="md-tabs__item">
+      <a href="../product-detail/" class="md-tabs__link">
         
   
   
-  
     
   
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../overview/" class="md-tabs__link">
-          
-  
-  
-  API
+  Product Detail
 
-        </a>
-      </li>
-    
+      </a>
+    </li>
   
 
       
@@ -377,13 +354,51 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../security/" class="md-tabs__link">
+      <a href="../callback/" class="md-tabs__link">
         
   
   
     
   
-  Security
+  Callback
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../otomax/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  OtoMax
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../status-codes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Status & RC
 
       </a>
     </li>
@@ -412,13 +427,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigasi" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="IDV Gateway" class="md-nav__button md-logo" aria-label="IDV Gateway" data-md-component="logo">
+    <a href="../.." title="IDV Open API" class="md-nav__button md-logo" aria-label="IDV Open API" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1c-1.11 0-2 .89-2 2v4c0 1.11.89 2 2 2H1v2h12V9h-3c1.11 0 2-.89 2-2V3c0-1.11-.89-2-2-2zm0 2h6v4H4zM3 13v7h7v-2H5v-5zm11 0c-1.11 0-2 .89-2 2v4c0 1.11.89 2 2 2h-3v2h12v-2h-3c1.11 0 2-.89 2-2v-4c0-1.11-.89-2-2-2zm0 2h6v4h-6z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 7H5a2 2 0 0 0-2 2v8h2v-4h2v4h2V9a2 2 0 0 0-2-2m0 4H5V9h2m7-2h-4v10h2v-4h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2m0 4h-2V9h2m6 0v6h1v2h-4v-2h1V9h-1V7h4v2Z"/></svg>
 
     </a>
-    IDV Gateway
+    IDV Open API
   </label>
   
     <div class="md-nav__source">
@@ -469,33 +484,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Fitur
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../getting-started/" class="md-nav__link">
         
   
@@ -503,7 +491,7 @@
   <span class="md-ellipsis">
     
   
-    Quickstart
+    Memulai
   
 
     
@@ -523,14 +511,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker/" class="md-nav__link">
+      <a href="../../authentication/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Docker
+    Autentikasi
   
 
     
@@ -545,261 +533,6 @@
     
       
       
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Konfigurasi
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Architecture
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../architecture/per-admin/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Isolasi per admin
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../architecture/upstream-h2h/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Upstream H2H
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    API
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Ringkasan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../auth/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Auth
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
     
@@ -811,6 +544,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -819,7 +554,7 @@
   <span class="md-ellipsis">
     
   
-    Transaction
+    Transaksi
   
 
     
@@ -837,7 +572,7 @@
   <span class="md-ellipsis">
     
   
-    Transaction
+    Transaksi
   
 
     
@@ -853,6 +588,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -861,85 +598,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#transaction-api" class="md-nav__link">
+  <a href="#request" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Transaction API
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Transaction API">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#membuat-transaksi-public" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Membuat transaksi (public)
+        Request
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#response-sama-format-dengan-callback" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Response (sama format dengan callback)
+        Response
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#ambil-list-transaksi-private" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#contoh-curl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ambil list transaksi (private)
+        Contoh curl
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#statistik-private" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#catatan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Statistik (private)
+        Catatan
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logs-private" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Logs (private)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cancel-retry-private" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cancel / Retry (private)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -950,38 +648,9 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../otomax/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
     
-  
-    OtoMax (HTTP GET)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
+      
+      
   
   
   
@@ -1006,10 +675,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -1034,10 +702,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -1062,23 +729,22 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
   
     <li class="md-nav__item">
-      <a href="../idv/" class="md-nav__link">
+      <a href="../otomax/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    IDV
+    OtoMax
   
 
     
@@ -1090,14 +756,6 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
       
@@ -1106,14 +764,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/" class="md-nav__link">
+      <a href="../status-codes/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Security
+    Status & RC
   
 
     
@@ -1143,6 +801,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1151,85 +811,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#transaction-api" class="md-nav__link">
+  <a href="#request" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Transaction API
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Transaction API">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#membuat-transaksi-public" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Membuat transaksi (public)
+        Request
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#response-sama-format-dengan-callback" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Response (sama format dengan callback)
+        Response
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#ambil-list-transaksi-private" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#contoh-curl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ambil list transaksi (private)
+        Contoh curl
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#statistik-private" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#catatan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Statistik (private)
+        Catatan
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logs-private" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Logs (private)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cancel-retry-private" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cancel / Retry (private)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1249,61 +870,104 @@
                   
 
 
-  
-  
 
-
-  <h1>Transaction</h1>
-
-<h2 id="transaction-api">Transaction API<a class="headerlink" href="#transaction-api" title="Permanent link">&para;</a></h2>
-<p>Prefix: <code>/api/transaction</code></p>
-<h3 id="membuat-transaksi-public">Membuat transaksi (public)<a class="headerlink" href="#membuat-transaksi-public" title="Permanent link">&para;</a></h3>
+<h1 id="transaksi">Transaksi<a class="headerlink" href="#transaksi" title="Permanent link">&para;</a></h1>
 <p><code>POST /api/transaction</code></p>
-<p>Body minimal:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;client_username&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;ref_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;unique_ref_123&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;sign&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;md5(username + api_key + ref_id)&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;buyer_sku_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;freefire_60_idv&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;customer_no&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3412409703&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;max_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;allow_dot&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">&quot;cb_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://client.example.com/callback&quot;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+<p>Membuat transaksi topup/voucher. Proses sering <strong>async</strong>: response awal bisa <code>PENDING</code>, hasil akhir dikirim ke <a href="../callback/">Callback</a>.</p>
+<h2 id="request">Request<a class="headerlink" href="#request" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="err">POST https://idv-api.pixlycode.app/api/transaction</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="err">Content-Type: application/json</span>
 </code></pre></div>
-<p>Catatan signature:</p>
-<ul>
-<li>Payload: <code>username + api_key + ref_id</code></li>
-<li>Hash: MD5 (hex)</li>
-</ul>
-<h3 id="response-sama-format-dengan-callback">Response (sama format dengan callback)<a class="headerlink" href="#response-sama-format-dengan-callback" title="Permanent link">&para;</a></h3>
-<p>HTTP <code>200</code>. Body identik dengan payload yang dikirim ke <code>cb_url</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;ref_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;unique_ref_123&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;customer_no&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3412409703&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;buyer_sku_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;freefire_60_idv&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Transaksi Pending&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PENDING&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">&quot;rc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;03&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nt">&quot;sn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nt">&quot;balance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">95000</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;client_username&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;ref_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;unique_ref_123&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;sign&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;md5(username + api_key + ref_id)&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;buyer_sku_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;freefire_60_idv&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;customer_no&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3412409703&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&quot;max_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">&quot;allow_dot&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">&quot;cb_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://client.example.com/callback&quot;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
 </code></pre></div>
-<p>Nilai <code>status</code> / <code>rc</code> yang umum:</p>
 <table>
 <thead>
 <tr>
-<th>Kondisi</th>
-<th>status</th>
-<th>rc</th>
+<th>Field</th>
+<th>Wajib</th>
+<th>Keterangan</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Diterima, diproses async</td>
+<td><code>username</code></td>
+<td>Ya</td>
+<td>Username API</td>
+</tr>
+<tr>
+<td><code>ref_id</code></td>
+<td>Ya</td>
+<td>ID unik dari sisi Anda (idempotent)</td>
+</tr>
+<tr>
+<td><code>sign</code></td>
+<td>Ya</td>
+<td><code>md5(username + api_key + ref_id)</code></td>
+</tr>
+<tr>
+<td><code>buyer_sku_code</code></td>
+<td>Ya</td>
+<td>Kode produk / SKU</td>
+</tr>
+<tr>
+<td><code>customer_no</code></td>
+<td>Ya</td>
+<td>Tujuan (nomor / game id)</td>
+</tr>
+<tr>
+<td><code>max_price</code></td>
+<td>Tidak*</td>
+<td>Batas harga; gunakan harga dari price-list</td>
+</tr>
+<tr>
+<td><code>allow_dot</code></td>
+<td>Tidak</td>
+<td>Default mengikuti aturan produk</td>
+</tr>
+<tr>
+<td><code>cb_url</code></td>
+<td>Tidak</td>
+<td>Callback; jika kosong bisa memakai default di akun</td>
+</tr>
+</tbody>
+</table>
+<p>* Disarankan selalu mengirim <code>max_price</code> sesuai harga aktif di price-list.</p>
+<h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h2>
+<p>HTTP <code>200</code>. Body sama bentuknya dengan payload callback:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;ref_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;unique_ref_123&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;customer_no&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3412409703&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;buyer_sku_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;freefire_60_idv&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Transaksi Pending&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PENDING&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">&quot;rc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;03&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nt">&quot;sn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">&quot;balance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">95000</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Kondisi</th>
+<th><code>status</code></th>
+<th><code>rc</code> (umum)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diterima, diproses</td>
 <td><code>PENDING</code></td>
 <td><code>03</code></td>
 </tr>
@@ -1313,30 +977,29 @@
 <td><code>00</code></td>
 </tr>
 <tr>
-<td>Gagal (user/sign/dll.)</td>
+<td>Gagal</td>
 <td><code>FAILED</code></td>
-<td>sesuai mapping error</td>
+<td>lihat <a href="../status-codes/">Status &amp; RC</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="ambil-list-transaksi-private">Ambil list transaksi (private)<a class="headerlink" href="#ambil-list-transaksi-private" title="Permanent link">&para;</a></h3>
-<p><code>GET /api/transaction?limit=10&amp;offset=0</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span><span class="s2">&quot;https://idv-api.pixlycode.app/api/transaction?limit=10&amp;offset=0&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;jwt&gt;&quot;</span>
+<h2 id="contoh-curl">Contoh curl<a class="headerlink" href="#contoh-curl" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://idv-api.pixlycode.app/api/transaction&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="s2">    \&quot;username\&quot;: \&quot;client_username\&quot;,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="s2">    \&quot;ref_id\&quot;: \&quot;unique_ref_123\&quot;,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="s2">    \&quot;sign\&quot;: \&quot;SIGN_HEX\&quot;,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="s2">    \&quot;buyer_sku_code\&quot;: \&quot;freefire_60_idv\&quot;,</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="s2">    \&quot;customer_no\&quot;: \&quot;3412409703\&quot;,</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="s2">    \&quot;max_price\&quot;: 10000,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="s2">    \&quot;cb_url\&quot;: \&quot;https://client.example.com/callback\&quot;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="s2">  }&quot;</span>
 </code></pre></div>
-<h3 id="statistik-private">Statistik (private)<a class="headerlink" href="#statistik-private" title="Permanent link">&para;</a></h3>
-<p><code>GET /api/transaction/statistics</code></p>
-<h3 id="logs-private">Logs (private)<a class="headerlink" href="#logs-private" title="Permanent link">&para;</a></h3>
+<h2 id="catatan">Catatan<a class="headerlink" href="#catatan" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>GET /api/transaction/:id/logs</code></li>
-<li><code>GET /api/transaction/ref/:refId/logs</code></li>
-<li><code>GET /api/transaction/detail/:detailId/logs</code></li>
-</ul>
-<h3 id="cancel-retry-private">Cancel / Retry (private)<a class="headerlink" href="#cancel-retry-private" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>PUT /api/transaction/:id/cancel</code></li>
-<li><code>POST /api/transaction/batch-cancel</code></li>
-<li><code>POST /api/transaction/:id/retry</code></li>
+<li>Ulangi <code>ref_id</code> yang sama → perilaku idempotent (status yang sudah ada dikembalikan / diproses sesuai aturan gateway).</li>
+<li>SN sukses ada di field <code>sn</code> (response final / callback).</li>
 </ul>
 
 
@@ -1384,7 +1047,7 @@
     
     
     
-    <a href="https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/" target="_blank" rel="noopener" title="Dokumentasi online" class="md-social__link">
+    <a href="https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/" target="_blank" rel="noopener" title="Open API docs" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
     </a>
   

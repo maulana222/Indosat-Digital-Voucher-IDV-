@@ -6,35 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Dokumentasi IDV Gateway — API transaksi, OtoMax, H2H, dan dashboard multi-admin">
+        <meta name="description" content="Dokumentasi Open API untuk integrasi transaksi, price list, product detail, callback, dan OtoMax">
       
       
       
-        <link rel="canonical" href="https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/api/idv/">
+        <link rel="canonical" href="https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/authentication/">
       
       
-        <link rel="prev" href="../callback/">
+        <link rel="prev" href="../getting-started/">
       
       
-        <link rel="next" href="../../security/">
+        <link rel="next" href="../api/transaction/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>IDV - IDV Gateway</title>
+        <title>Autentikasi - IDV Open API</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#idv-api-private" class="md-skip">
+        <a href="#autentikasi-open-api" class="md-skip">
           Lewati ke isi
         </a>
       
@@ -91,10 +91,8 @@
           <div class="md-banner__inner md-grid md-typeset">
             
             
-  Dokumentasi online:
-  <a href="https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/">
-    maulana222.github.io/Indosat-Digital-Voucher-IDV-
-  </a>
+  Open API · Base URL
+  <a href="https://idv-api.pixlycode.app">https://idv-api.pixlycode.app</a>
 
           </div>
           
@@ -107,10 +105,10 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="IDV Gateway" class="md-header__button md-logo" aria-label="IDV Gateway" data-md-component="logo">
+    <a href=".." title="IDV Open API" class="md-header__button md-logo" aria-label="IDV Open API" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1c-1.11 0-2 .89-2 2v4c0 1.11.89 2 2 2H1v2h12V9h-3c1.11 0 2-.89 2-2V3c0-1.11-.89-2-2-2zm0 2h6v4H4zM3 13v7h7v-2H5v-5zm11 0c-1.11 0-2 .89-2 2v4c0 1.11.89 2 2 2h-3v2h12v-2h-3c1.11 0 2-.89 2-2v-4c0-1.11-.89-2-2-2zm0 2h6v4h-6z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 7H5a2 2 0 0 0-2 2v8h2v-4h2v4h2V9a2 2 0 0 0-2-2m0 4H5V9h2m7-2h-4v10h2v-4h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2m0 4h-2V9h2m6 0v6h1v2h-4v-2h1V9h-1V7h4v2Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -121,13 +119,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            IDV Gateway
+            IDV Open API
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IDV
+              Autentikasi
             
           </span>
         </div>
@@ -240,7 +238,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -259,13 +257,34 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../features/" class="md-tabs__link">
+      <a href="../getting-started/" class="md-tabs__link">
         
   
   
     
   
-  Fitur
+  Memulai
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Autentikasi
 
       </a>
     </li>
@@ -278,13 +297,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../getting-started/" class="md-tabs__link">
+      <a href="../api/transaction/" class="md-tabs__link">
         
   
   
     
   
-  Quickstart
+  Transaksi
 
       </a>
     </li>
@@ -297,13 +316,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../docker/" class="md-tabs__link">
+      <a href="../api/price-list/" class="md-tabs__link">
         
   
   
     
   
-  Docker
+  Price List
 
       </a>
     </li>
@@ -316,13 +335,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../configuration/" class="md-tabs__link">
+      <a href="../api/product-detail/" class="md-tabs__link">
         
   
   
     
   
-  Konfigurasi
+  Product Detail
 
       </a>
     </li>
@@ -334,40 +353,17 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../architecture/per-admin/" class="md-tabs__link">
-          
-  
-  
-  Architecture
-
-        </a>
-      </li>
-    
-  
-
-      
+    <li class="md-tabs__item">
+      <a href="../api/callback/" class="md-tabs__link">
         
   
   
-  
     
   
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../overview/" class="md-tabs__link">
-          
-  
-  
-  API
+  Callback
 
-        </a>
-      </li>
-    
+      </a>
+    </li>
   
 
       
@@ -377,13 +373,32 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../security/" class="md-tabs__link">
+      <a href="../api/otomax/" class="md-tabs__link">
         
   
   
     
   
-  Security
+  OtoMax
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../api/status-codes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Status & RC
 
       </a>
     </li>
@@ -412,13 +427,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigasi" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="IDV Gateway" class="md-nav__button md-logo" aria-label="IDV Gateway" data-md-component="logo">
+    <a href=".." title="IDV Open API" class="md-nav__button md-logo" aria-label="IDV Open API" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1c-1.11 0-2 .89-2 2v4c0 1.11.89 2 2 2H1v2h12V9h-3c1.11 0 2-.89 2-2V3c0-1.11-.89-2-2-2zm0 2h6v4H4zM3 13v7h7v-2H5v-5zm11 0c-1.11 0-2 .89-2 2v4c0 1.11.89 2 2 2h-3v2h12v-2h-3c1.11 0 2-.89 2-2v-4c0-1.11-.89-2-2-2zm0 2h6v4h-6z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 7H5a2 2 0 0 0-2 2v8h2v-4h2v4h2V9a2 2 0 0 0-2-2m0 4H5V9h2m7-2h-4v10h2v-4h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2m0 4h-2V9h2m6 0v6h1v2h-4v-2h1V9h-1V7h4v2Z"/></svg>
 
     </a>
-    IDV Gateway
+    IDV Open API
   </label>
   
     <div class="md-nav__source">
@@ -442,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -469,14 +484,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Fitur
+    Memulai
   
 
     
@@ -493,114 +508,26 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
     
   
-    Quickstart
-  
-
-    
-  </span>
   
   
-
-      </a>
-    </li>
-  
-
-    
+    <li class="md-nav__item md-nav__item--active">
       
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../docker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Docker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Konfigurasi
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
+        <label class="md-nav__link md-nav__link--active" for="__toc">
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
     
   
-    Architecture
+    Autentikasi
   
 
     
@@ -608,35 +535,125 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Architecture
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../architecture/per-admin/" class="md-nav__link">
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Isolasi per admin
+    Autentikasi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Daftar isi">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Daftar isi
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#signature-md5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signature MD5
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signature MD5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contoh-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contoh (Node.js)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contoh-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contoh (PHP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip-whitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IP whitelist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keamanan-credential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keamanan credential
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/transaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaksi
   
 
     
@@ -648,220 +665,15 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/upstream-h2h/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Upstream H2H
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    API
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Ringkasan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../auth/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Auth
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../transaction/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Transaction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../otomax/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    OtoMax (HTTP GET)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../price-list/" class="md-nav__link">
+      <a href="../api/price-list/" class="md-nav__link">
         
   
   
@@ -880,16 +692,15 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
   
     <li class="md-nav__item">
-      <a href="../product-detail/" class="md-nav__link">
+      <a href="../api/product-detail/" class="md-nav__link">
         
   
   
@@ -908,16 +719,15 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
   
     <li class="md-nav__item">
-      <a href="../callback/" class="md-nav__link">
+      <a href="../api/callback/" class="md-nav__link">
         
   
   
@@ -936,48 +746,22 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
   
   
-  <span class="md-ellipsis">
-    
-  
-    IDV
-  
-
-    
-  </span>
   
   
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../api/otomax/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    IDV
+    OtoMax
   
 
     
@@ -986,43 +770,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Daftar isi">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Daftar isi
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#idv-api-private" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        IDV API (Private)
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1034,14 +781,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/" class="md-nav__link">
+      <a href="../api/status-codes/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Security
+    Status & RC
   
 
     
@@ -1071,6 +818,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1079,10 +828,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#idv-api-private" class="md-nav__link">
+  <a href="#signature-md5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IDV API (Private)
+        Signature MD5
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signature MD5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contoh-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contoh (Node.js)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contoh-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contoh (PHP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip-whitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IP whitelist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keamanan-credential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keamanan credential
       
     </span>
   </a>
@@ -1105,34 +904,56 @@
                   
 
 
-  
-  
 
-
-  <h1>IDV</h1>
-
-<h2 id="idv-api-private">IDV API (Private)<a class="headerlink" href="#idv-api-private" title="Permanent link">&para;</a></h2>
-<p>Prefix: <code>/api/idv</code></p>
-<p>Endpoint utama:</p>
+<h1 id="autentikasi-open-api">Autentikasi Open API<a class="headerlink" href="#autentikasi-open-api" title="Permanent link">&para;</a></h1>
+<p>Endpoint publik <strong>tidak</strong> memakai JWT dashboard. Autentikasi = <code>username</code> + <code>api_key</code> lewat <strong>signature</strong>, plus <strong>IP whitelist</strong>.</p>
+<h2 id="signature-md5">Signature MD5<a class="headerlink" href="#signature-md5" title="Permanent link">&para;</a></h2>
+<p>Semua hash: <strong>MD5 hex</strong> (perbandingan case-insensitive di server).</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Rumus <code>sign</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transaksi <code>POST /api/transaction</code></td>
+<td><code>md5(username + api_key + ref_id)</code></td>
+</tr>
+<tr>
+<td>Price list <code>POST /api/price-list</code></td>
+<td><code>md5(username + api_key + "pricelist")</code></td>
+</tr>
+<tr>
+<td>Product detail <code>POST /api/product-detail</code></td>
+<td><code>md5(username + api_key + "productdetail")</code></td>
+</tr>
+</tbody>
+</table>
+<p>String literal <code>pricelist</code> / <code>productdetail</code> tanpa spasi tambahan.</p>
+<h3 id="contoh-nodejs">Contoh (Node.js)<a class="headerlink" href="#contoh-nodejs" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">crypto</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;crypto&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;client_username&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your-api-key&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">refId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;unique_ref_123&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">crypto</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="p">.</span><span class="nx">createHash</span><span class="p">(</span><span class="s2">&quot;md5&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">username</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">apiKey</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">refId</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="p">.</span><span class="nx">digest</span><span class="p">(</span><span class="s2">&quot;hex&quot;</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="contoh-php">Contoh (PHP)<a class="headerlink" href="#contoh-php" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="x">$sign = md5($username . $apiKey . $refId);</span>
+</code></pre></div>
+<h2 id="ip-whitelist">IP whitelist<a class="headerlink" href="#ip-whitelist" title="Permanent link">&para;</a></h2>
+<p>Request harus berasal dari IP yang sudah didaftarkan untuk API key Anda. IP publik server outbound (NAT) yang dipakai — bukan IP lokal.</p>
+<h2 id="keamanan-credential">Keamanan credential<a class="headerlink" href="#keamanan-credential" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>POST /api/idv/initialize</code> (inisialisasi session/cookies)</li>
-<li><code>POST /api/idv/login</code></li>
-<li><code>GET /api/idv/session</code></li>
-<li><code>POST /api/idv/logout</code></li>
-<li><code>GET /api/idv/refresh/status</code></li>
-<li><code>GET /api/idv/home</code></li>
-<li><code>GET /api/idv/sessions</code></li>
-<li><code>DELETE /api/idv/sessions/expired</code></li>
-</ul>
-<p>Produk:</p>
-<ul>
-<li><code>GET /api/idv/products</code></li>
-<li><code>GET /api/idv/products/:productId</code></li>
-<li><code>POST /api/idv/products</code></li>
-<li><code>POST /api/idv/products/sync</code></li>
-<li><code>PUT /api/idv/products/denom/:itemCode</code></li>
-<li><code>PUT /api/idv/products/denom/:itemCode/code</code></li>
-<li><code>POST /api/idv/products/bulk-update</code></li>
+<li>Jangan commit <code>api_key</code> ke repo publik.</li>
+<li>Jangan kirim <code>api_key</code> di body request (hanya dipakai untuk menghitung <code>sign</code>).</li>
+<li>Putar key jika bocor; hubungi penyedia gateway.</li>
 </ul>
 
 
@@ -1180,7 +1001,7 @@
     
     
     
-    <a href="https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/" target="_blank" rel="noopener" title="Dokumentasi online" class="md-social__link">
+    <a href="https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/" target="_blank" rel="noopener" title="Open API docs" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
     </a>
   
@@ -1199,10 +1020,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Tersalin ke clipboard", "clipboard.copy": "Salin ke clipboard", "search.result.more.one": "1 lagi di halaman ini", "search.result.more.other": "# lagi di halaman ini", "search.result.none": "Tidak ada dokumen yang sesuai", "search.result.one": "1 dokumen ditemukan", "search.result.other": "# dokumen ditemukan", "search.result.placeholder": "Ketik untuk mulai pencarian", "search.result.term.missing": "Tidak ada", "select.version": "Pilih versi"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Tersalin ke clipboard", "clipboard.copy": "Salin ke clipboard", "search.result.more.one": "1 lagi di halaman ini", "search.result.more.other": "# lagi di halaman ini", "search.result.none": "Tidak ada dokumen yang sesuai", "search.result.one": "1 dokumen ditemukan", "search.result.other": "# dokumen ditemukan", "search.result.placeholder": "Ketik untuk mulai pencarian", "search.result.term.missing": "Tidak ada", "select.version": "Pilih versi"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

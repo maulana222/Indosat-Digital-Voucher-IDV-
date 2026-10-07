@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Dokumentasi IDV Gateway — API transaksi, OtoMax, H2H, dan dashboard multi-admin">
+        <meta name="description" content="Dokumentasi Open API untuk integrasi transaksi, price list, product detail, callback, dan OtoMax">
       
       
       
@@ -14,7 +14,7 @@
       
       
       
-        <link rel="next" href="features/">
+        <link rel="next" href="getting-started/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>IDV Gateway</title>
+        <title>IDV Open API</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#idv-gateway" class="md-skip">
+        <a href="#idv-open-api" class="md-skip">
           Lewati ke isi
         </a>
       
@@ -89,10 +89,8 @@
           <div class="md-banner__inner md-grid md-typeset">
             
             
-  Dokumentasi online:
-  <a href="https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/">
-    maulana222.github.io/Indosat-Digital-Voucher-IDV-
-  </a>
+  Open API · Base URL
+  <a href="https://idv-api.pixlycode.app">https://idv-api.pixlycode.app</a>
 
           </div>
           
@@ -105,10 +103,10 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="IDV Gateway" class="md-header__button md-logo" aria-label="IDV Gateway" data-md-component="logo">
+    <a href="." title="IDV Open API" class="md-header__button md-logo" aria-label="IDV Open API" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1c-1.11 0-2 .89-2 2v4c0 1.11.89 2 2 2H1v2h12V9h-3c1.11 0 2-.89 2-2V3c0-1.11-.89-2-2-2zm0 2h6v4H4zM3 13v7h7v-2H5v-5zm11 0c-1.11 0-2 .89-2 2v4c0 1.11.89 2 2 2h-3v2h12v-2h-3c1.11 0 2-.89 2-2v-4c0-1.11-.89-2-2-2zm0 2h6v4h-6z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 7H5a2 2 0 0 0-2 2v8h2v-4h2v4h2V9a2 2 0 0 0-2-2m0 4H5V9h2m7-2h-4v10h2v-4h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2m0 4h-2V9h2m6 0v6h1v2h-4v-2h1V9h-1V7h4v2Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -119,7 +117,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            IDV Gateway
+            IDV Open API
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -259,32 +257,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="features/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Fitur
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
       <a href="getting-started/" class="md-tabs__link">
         
   
   
     
   
-  Quickstart
+  Memulai
 
       </a>
     </li>
@@ -297,13 +276,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="docker/" class="md-tabs__link">
+      <a href="authentication/" class="md-tabs__link">
         
   
   
     
   
-  Docker
+  Autentikasi
 
       </a>
     </li>
@@ -316,13 +295,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="configuration/" class="md-tabs__link">
+      <a href="api/transaction/" class="md-tabs__link">
         
   
   
     
   
-  Konfigurasi
+  Transaksi
 
       </a>
     </li>
@@ -334,38 +313,17 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="architecture/per-admin/" class="md-tabs__link">
-          
-  
-  
-  Architecture
-
-        </a>
-      </li>
-    
-  
-
-      
+    <li class="md-tabs__item">
+      <a href="api/price-list/" class="md-tabs__link">
         
   
   
-  
-  
     
-    
-      <li class="md-tabs__item">
-        <a href="api/overview/" class="md-tabs__link">
-          
   
-  
-  API
+  Price List
 
-        </a>
-      </li>
-    
+      </a>
+    </li>
   
 
       
@@ -375,13 +333,70 @@
   
   
     <li class="md-tabs__item">
-      <a href="security/" class="md-tabs__link">
+      <a href="api/product-detail/" class="md-tabs__link">
         
   
   
     
   
-  Security
+  Product Detail
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="api/callback/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Callback
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="api/otomax/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  OtoMax
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="api/status-codes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Status & RC
 
       </a>
     </li>
@@ -410,13 +425,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigasi" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="IDV Gateway" class="md-nav__button md-logo" aria-label="IDV Gateway" data-md-component="logo">
+    <a href="." title="IDV Open API" class="md-nav__button md-logo" aria-label="IDV Open API" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1c-1.11 0-2 .89-2 2v4c0 1.11.89 2 2 2H1v2h12V9h-3c1.11 0 2-.89 2-2V3c0-1.11-.89-2-2-2zm0 2h6v4H4zM3 13v7h7v-2H5v-5zm11 0c-1.11 0-2 .89-2 2v4c0 1.11.89 2 2 2h-3v2h12v-2h-3c1.11 0 2-.89 2-2v-4c0-1.11-.89-2-2-2zm0 2h6v4h-6z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 7H5a2 2 0 0 0-2 2v8h2v-4h2v4h2V9a2 2 0 0 0-2-2m0 4H5V9h2m7-2h-4v10h2v-4h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2m0 4h-2V9h2m6 0v6h1v2h-4v-2h1V9h-1V7h4v2Z"/></svg>
 
     </a>
-    IDV Gateway
+    IDV Open API
   </label>
   
     <div class="md-nav__source">
@@ -500,10 +515,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#backend-api" class="md-nav__link">
+  <a href="#endpoint-publik" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Backend API
+        Endpoint publik
       
     </span>
   </a>
@@ -511,10 +526,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dashboard" class="md-nav__link">
+  <a href="#yang-tidak-dibahas-di-sini" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dashboard
+        Yang tidak dibahas di sini
       
     </span>
   </a>
@@ -522,32 +537,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#isolasi-per-admin" class="md-nav__link">
+  <a href="#alur-singkat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Isolasi per admin
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#konsep-penting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Konsep penting
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#baca-selanjutnya" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Baca selanjutnya
+        Alur singkat
       
     </span>
   </a>
@@ -569,33 +562,6 @@
   
   
     <li class="md-nav__item">
-      <a href="features/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Fitur
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="getting-started/" class="md-nav__link">
         
   
@@ -603,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    Quickstart
+    Memulai
   
 
     
@@ -623,14 +589,14 @@
   
   
     <li class="md-nav__item">
-      <a href="docker/" class="md-nav__link">
+      <a href="authentication/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Docker
+    Autentikasi
   
 
     
@@ -645,256 +611,6 @@
     
       
       
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Konfigurasi
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Architecture
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="architecture/per-admin/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Isolasi per admin
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="architecture/upstream-h2h/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Upstream H2H
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    API
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Ringkasan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/auth/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Auth
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
   
@@ -907,7 +623,7 @@
   <span class="md-ellipsis">
     
   
-    Transaction
+    Transaksi
   
 
     
@@ -919,38 +635,9 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/otomax/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
     
-  
-    OtoMax (HTTP GET)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
+      
+      
   
   
   
@@ -975,10 +662,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -1003,10 +689,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -1031,23 +716,22 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
   
     <li class="md-nav__item">
-      <a href="api/idv/" class="md-nav__link">
+      <a href="api/otomax/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    IDV
+    OtoMax
   
 
     
@@ -1059,14 +743,6 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
       
@@ -1075,14 +751,14 @@
   
   
     <li class="md-nav__item">
-      <a href="security/" class="md-nav__link">
+      <a href="api/status-codes/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Security
+    Status & RC
   
 
     
@@ -1122,10 +798,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#backend-api" class="md-nav__link">
+  <a href="#endpoint-publik" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Backend API
+        Endpoint publik
       
     </span>
   </a>
@@ -1133,10 +809,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dashboard" class="md-nav__link">
+  <a href="#yang-tidak-dibahas-di-sini" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dashboard
+        Yang tidak dibahas di sini
       
     </span>
   </a>
@@ -1144,32 +820,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#isolasi-per-admin" class="md-nav__link">
+  <a href="#alur-singkat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Isolasi per admin
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#konsep-penting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Konsep penting
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#baca-selanjutnya" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Baca selanjutnya
+        Alur singkat
       
     </span>
   </a>
@@ -1192,61 +846,67 @@
                   
 
 
-  
-  
 
-
-<h1 id="idv-gateway">IDV Gateway<a class="headerlink" href="#idv-gateway" title="Permanent link">&para;</a></h1>
-<p>Server API yang menjembatani sistem Anda dengan <strong>Indosat Digital Voucher (IDV)</strong>, plus dashboard multi-admin untuk monitoring dan konfigurasi.</p>
-<p><a class="md-button md-button--primary" href="getting-started/">Quickstart</a>
-<a class="md-button" href="https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/">Dokumentasi online</a></p>
+<h1 id="idv-open-api">IDV Open API<a class="headerlink" href="#idv-open-api" title="Permanent link">&para;</a></h1>
+<p>Dokumentasi <strong>integrasi client</strong> ke gateway transaksi. Cocok untuk sistem Digiflazz-style, OtoMax, atau middleware Anda sendiri.</p>
+<p>Base URL production:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://idv-api.pixlycode.app
+</code></pre></div>
+<p><a class="md-button md-button--primary" href="getting-started/">Memulai</a>
+<a class="md-button" href="api/transaction/">Transaksi</a></p>
 <hr />
-<h3 id="backend-api">Backend API<a class="headerlink" href="#backend-api" title="Permanent link">&para;</a></h3>
-<p>Transaksi Digiflazz-style, OtoMax GET, callback, katalog produk, session IDV (cookie / H2H).</p>
-<h3 id="dashboard">Dashboard<a class="headerlink" href="#dashboard" title="Permanent link">&para;</a></h3>
-<p>Login JWT, transaksi, statistik, Account Settings, Koneksi Cookie/H2H per admin.</p>
-<h3 id="isolasi-per-admin">Isolasi per admin<a class="headerlink" href="#isolasi-per-admin" title="Permanent link">&para;</a></h3>
-<p>Harga, cookie, kredensial H2H, dan upstream transaksi terikat <code>user_id</code> pemilik — tidak saling pakai. Baca <a href="architecture/per-admin/">Isolasi per admin</a>.</p>
-<hr />
-<h2 id="konsep-penting">Konsep penting<a class="headerlink" href="#konsep-penting" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Public transaksi</strong>: <code>POST /api/transaction</code> (signature MD5) atau OtoMax <code>GET /api/v2/otomax/*</code></li>
-<li><strong>Dashboard / private</strong>: JWT <code>Authorization: Bearer ...</code></li>
-<li><strong>Upstream ke IDV</strong>: tiap admin memilih <strong>Cookie</strong> atau <strong>H2H Nuon</strong> di halaman Koneksi</li>
-<li><strong>Tipe client</strong>: <code>api</code> (POST Digiflazz) atau <code>otomax</code> (GET) di Account Settings</li>
-</ul>
-<h2 id="baca-selanjutnya">Baca selanjutnya<a class="headerlink" href="#baca-selanjutnya" title="Permanent link">&para;</a></h2>
+<h3 id="endpoint-publik">Endpoint publik<a class="headerlink" href="#endpoint-publik" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Halaman</th>
-<th>Isi</th>
+<th>API</th>
+<th>Method</th>
+<th>Path</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="features/">Fitur</a></td>
-<td>Ringkasan kemampuan</td>
+<td>Transaksi</td>
+<td><code>POST</code></td>
+<td><code>/api/transaction</code></td>
 </tr>
 <tr>
-<td><a href="architecture/per-admin/">Isolasi per admin</a></td>
-<td>Keamanan multi-tenant</td>
+<td>Price list</td>
+<td><code>POST</code></td>
+<td><code>/api/price-list</code></td>
 </tr>
 <tr>
-<td><a href="architecture/upstream-h2h/">Upstream H2H</a></td>
-<td>Adapter cookie vs Nuon</td>
+<td>Product detail</td>
+<td><code>POST</code></td>
+<td><code>/api/product-detail</code></td>
 </tr>
 <tr>
-<td><a href="api/otomax/">OtoMax</a></td>
-<td>Integrasi HTTP GET</td>
+<td>OtoMax trx</td>
+<td><code>GET</code></td>
+<td><code>/api/v2/otomax/trx</code></td>
 </tr>
 <tr>
-<td><a href="security/">Security</a></td>
-<td>Checklist production</td>
+<td>OtoMax saldo</td>
+<td><code>GET</code></td>
+<td><code>/api/v2/otomax/balance</code></td>
+</tr>
+<tr>
+<td>Callback</td>
+<td>—</td>
+<td>URL Anda (kami yang memanggil)</td>
 </tr>
 </tbody>
 </table>
-<p>Dokumentasi UI (GitHub Pages): <a href="https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/">maulana222.github.io/Indosat-Digital-Voucher-IDV-</a></p>
+<h3 id="yang-tidak-dibahas-di-sini">Yang tidak dibahas di sini<a class="headerlink" href="#yang-tidak-dibahas-di-sini" title="Permanent link">&para;</a></h3>
+<p>Dokumen ini <strong>bukan</strong> panduan instalasi server, Docker, dashboard admin, atau arsitektur internal. Hal tersebut bersifat privat untuk pemilik produk.</p>
+<hr />
+<h2 id="alur-singkat">Alur singkat<a class="headerlink" href="#alur-singkat" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Dapatkan <code>username</code> + <code>api_key</code> (+ whitelist IP) dari penyedia gateway.</li>
+<li>Panggil Price List / Product Detail untuk SKU &amp; harga.</li>
+<li>Kirim Transaksi dengan <code>sign</code> MD5.</li>
+<li>Terima response sync (<code>PENDING</code> / <code>FAILED</code> / …) dan <strong>callback</strong> ke <code>cb_url</code> saat status final.</li>
+</ol>
 
 
 
@@ -1293,7 +953,7 @@
     
     
     
-    <a href="https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/" target="_blank" rel="noopener" title="Dokumentasi online" class="md-social__link">
+    <a href="https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/" target="_blank" rel="noopener" title="Open API docs" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
     </a>
   

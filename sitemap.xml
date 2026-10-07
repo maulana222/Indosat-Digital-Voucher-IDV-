@@ -5,15 +5,7 @@
          <lastmod>2026-10-07</lastmod>
     </url>
     <url>
-         <loc>https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/configuration/</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
-         <loc>https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/docker/</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
-         <loc>https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/features/</loc>
+         <loc>https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/authentication/</loc>
          <lastmod>2026-10-07</lastmod>
     </url>
     <url>
@@ -21,27 +13,11 @@
          <lastmod>2026-10-07</lastmod>
     </url>
     <url>
-         <loc>https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/security/</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
-         <loc>https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/api/auth/</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
          <loc>https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/api/callback/</loc>
          <lastmod>2026-10-07</lastmod>
     </url>
     <url>
-         <loc>https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/api/idv/</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
          <loc>https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/api/otomax/</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
-         <loc>https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/api/overview/</loc>
          <lastmod>2026-10-07</lastmod>
     </url>
     <url>
@@ -53,15 +29,11 @@
          <lastmod>2026-10-07</lastmod>
     </url>
     <url>
+         <loc>https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/api/status-codes/</loc>
+         <lastmod>2026-10-07</lastmod>
+    </url>
+    <url>
          <loc>https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/api/transaction/</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
-         <loc>https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/architecture/per-admin/</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
-         <loc>https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/architecture/upstream-h2h/</loc>
          <lastmod>2026-10-07</lastmod>
     </url>
 </urlset>
