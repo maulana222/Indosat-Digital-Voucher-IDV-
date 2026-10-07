@@ -4,7 +4,9 @@
   --md-primary-fg-color: #0f3d3e;
   --md-primary-fg-color--light: #1a5c5e;
   --md-primary-fg-color--dark: #0a2a2b;
-  --md-primary-bg-color: #f4f7f6;
+  /* Teks/ikon di atas primary (header/tabs) — harus kontras terang */
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #ffffff;
   --md-accent-fg-color: #c45c26;
   --md-accent-fg-color--transparent: rgba(196, 92, 38, 0.12);
   --md-typeset-a-color: #1a5c5e;
@@ -30,14 +32,43 @@
 .md-header {
   background: linear-gradient(120deg, #0f3d3e 0%, #16494a 55%, #1a3d2e 100%);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 8px 24px rgba(15, 61, 62, 0.25);
+  color: #ffffff;
 }
 
 [data-md-color-scheme="slate"] .md-header {
   background: linear-gradient(120deg, #0c2223 0%, #123334 60%, #0f1f1a 100%);
 }
 
+/* Tabs harus latar gelap + teks putih (jangan transparent di mode terang) */
 .md-tabs {
-  background: transparent;
+  background: linear-gradient(120deg, #0f3d3e 0%, #16494a 55%, #1a3d2e 100%);
+  color: #ffffff;
+}
+
+[data-md-color-scheme="slate"] .md-tabs {
+  background: linear-gradient(120deg, #0c2223 0%, #123334 60%, #0f1f1a 100%);
+}
+
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.82) !important;
+  opacity: 1 !important;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active,
+.md-tabs__item--active .md-tabs__link {
+  color: #ffffff !important;
+}
+
+.md-header__title,
+.md-header__button,
+.md-header .md-header__topic,
+.md-header__source {
+  color: #ffffff;
+}
+
+.md-header__button svg {
+  fill: currentColor;
 }
 
 .md-announce {
