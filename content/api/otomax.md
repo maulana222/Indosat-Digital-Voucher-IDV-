@@ -119,4 +119,4 @@ Saldo:
 https://idv-api.pixlycode.app/api/v2/otomax/balance?memberID={memberID}&pin={pin}&password={password}
 ```
 
-Daftarkan IP server OtoMax di **Account Settings → IP Whitelist**.
+Daftarkan IP server OtoMax ke **IP whitelist** akun API Anda (minta ke penyedia gateway).
