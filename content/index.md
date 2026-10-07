@@ -20,8 +20,8 @@ https://idv-api.pixlycode.app
 | Transaksi | `POST` | `/api/transaction` |
 | Price list | `POST` | `/api/price-list` |
 | Product detail | `POST` | `/api/product-detail` |
-| OtoMax trx | `GET` | `/api/v2/otomax/trx` |
-| OtoMax saldo | `GET` | `/api/v2/otomax/balance` |
+| OtoMax trx | `GET` | `/api/otomax/trx` |
+| OtoMax saldo | `GET` | `/api/otomax/balance` |
 | Callback | — | URL Anda (kami yang memanggil) |
 
 ### Yang tidak dibahas di sini

@@ -12,19 +12,19 @@ https://idv-api.pixlycode.app
 
 | Path | Keterangan |
 |------|------------|
-| `/api/v2/otomax` | Path utama |
-| `/reseller/api/v2/otomax` | **Alias** — URL lain ke **handler yang sama** |
+| `/api/otomax` | **Path utama** |
+| `/api/v2/otomax` | Alias (kompatibilitas lama) |
+| `/reseller/api/v2/otomax` | Alias (template IP Center lama) |
 
-**Maksud alias:** beberapa template OtoMax / IP Center memakai prefix lama bergaya `/reseller/api/...`. Agar tidak perlu ubah software, gateway mendaftarkan kedua path ke endpoint yang sama.
+**Maksud alias:** URL lain ke **handler yang sama**. Cukup isi **satu** di IP Center — disarankan path utama.
 
 Contoh ekuivalen:
 
 ```text
+https://idv-api.pixlycode.app/api/otomax/trx?...
 https://idv-api.pixlycode.app/api/v2/otomax/trx?...
 https://idv-api.pixlycode.app/reseller/api/v2/otomax/trx?...
 ```
-
-Cukup isi **satu** di IP Center (disarankan path utama `/api/v2/otomax/...`).
 
 Credential: `memberID`, `pin`, `password` (dari penyedia akun). IP server OtoMax harus di-whitelist.
 
@@ -33,13 +33,13 @@ Credential: `memberID`, `pin`, `password` (dari penyedia akun). IP server OtoMax
 ## Transaksi — GET
 
 ```
-GET {base}/api/v2/otomax/trx?product={product}&dest={dest}&refID={refID}&memberID={memberID}&pin={pin}&password={password}
+GET {base}/api/otomax/trx?product={product}&dest={dest}&refID={refID}&memberID={memberID}&pin={pin}&password={password}
 ```
 
 Open denom (`qty` = **nominal**, bukan jumlah pembelian):
 
 ```
-GET {base}/api/v2/otomax/trx?product={product}&dest={dest}&refID={refID}&qty=50000&memberID={memberID}&pin={pin}&password={password}
+GET {base}/api/otomax/trx?product={product}&dest={dest}&refID={refID}&qty=50000&memberID={memberID}&pin={pin}&password={password}
 ```
 
 | Param | Wajib | Keterangan |
@@ -129,7 +129,7 @@ R#OMX001 TL5.0811222333 GAGAL. Transaksi Gagal. Saldo: 90000
 ## Cek saldo — GET
 
 ```
-GET {base}/api/v2/otomax/balance?memberID={memberID}&pin={pin}&password={password}
+GET {base}/api/otomax/balance?memberID={memberID}&pin={pin}&password={password}
 ```
 
 **Sukses**
@@ -178,19 +178,13 @@ GET {cb_url}?rc=00&code=TL5&msg=SUKSES&msisdn=0811222333&sn=SN123ABC&request_id=
 Transaksi:
 
 ```text
-https://idv-api.pixlycode.app/api/v2/otomax/trx?product=[product]&dest=[tujuan]&refID=[trxid]&memberID={memberID}&pin={pin}&password={password}
+https://idv-api.pixlycode.app/api/otomax/trx?product=[product]&dest=[tujuan]&refID=[trxid]&memberID={memberID}&pin={pin}&password={password}
 ```
 
 Saldo:
 
 ```text
-https://idv-api.pixlycode.app/api/v2/otomax/balance?memberID={memberID}&pin={pin}&password={password}
-```
-
-(Opsional alias reseller — sama fungsinya:)
-
-```text
-https://idv-api.pixlycode.app/reseller/api/v2/otomax/trx?...
+https://idv-api.pixlycode.app/api/otomax/balance?memberID={memberID}&pin={pin}&password={password}
 ```
 
 Daftarkan IP server OtoMax ke **IP whitelist** akun API Anda (minta ke penyedia gateway).

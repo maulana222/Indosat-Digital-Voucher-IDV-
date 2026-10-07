@@ -21,7 +21,7 @@ https://idv-api.pixlycode.app
 
 === "OtoMax (HTTP GET)"
 
-    Arahkan **IP Center** OtoMax ke gateway. Credential: `memberID`, `pin`, `password`.  
+    Arahkan **IP Center** OtoMax ke `https://idv-api.pixlycode.app/api/otomax/trx`. Credential: `memberID`, `pin`, `password`.  
     Lihat [OtoMax](api/otomax.md).
 
 ## Tes cepat
