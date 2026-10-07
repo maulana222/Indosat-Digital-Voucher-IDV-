@@ -706,6 +706,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#prefix-alias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefix &amp; alias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#transaksi-get" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -714,14 +725,47 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Transaksi — GET">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pola-parsing-reply-trx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pola parsing reply (trx)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pola parsing reply (trx)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#contoh-balasan-teks-content-type-textplain" class="md-nav__link">
+  <a href="#contoh-sukses-pending" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contoh balasan teks (Content-Type: text/plain)
+        Contoh — sukses / pending
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contoh-semua-pesan-gagal-pesan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contoh — semua pesan gagal ({pesan})
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabel-rc-pesan-callback-mapping-internal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabel RC ↔ pesan (callback / mapping internal)
       
     </span>
   </a>
@@ -828,6 +872,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#prefix-alias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefix &amp; alias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#transaksi-get" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -836,14 +891,47 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Transaksi — GET">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pola-parsing-reply-trx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pola parsing reply (trx)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pola parsing reply (trx)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#contoh-balasan-teks-content-type-textplain" class="md-nav__link">
+  <a href="#contoh-sukses-pending" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contoh balasan teks (Content-Type: text/plain)
+        Contoh — sukses / pending
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contoh-semua-pesan-gagal-pesan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contoh — semua pesan gagal ({pesan})
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabel-rc-pesan-callback-mapping-internal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabel RC ↔ pesan (callback / mapping internal)
       
     </span>
   </a>
@@ -906,20 +994,42 @@
 
 
 <h1 id="otomax-http-get">OtoMax (HTTP GET)<a class="headerlink" href="#otomax-http-get" title="Permanent link">&para;</a></h1>
-<p>Prefix:</p>
-<ul>
-<li><code>/api/v2/otomax</code></li>
-<li>Alias: <code>/reseller/api/v2/otomax</code></li>
-</ul>
-<p>Untuk reseller yang memakai software <strong>OtoMax</strong>: tidak perlu integrasi JSON Digiflazz-style. Arahkan <strong>IP Center</strong> OtoMax ke gateway ini.</p>
-<p>Credential: <code>memberID</code>, <code>pin</code>, <code>password</code> (dari penyedia akun). IP server OtoMax harus di-whitelist.</p>
-<p>Base: <code>https://idv-api.pixlycode.app</code></p>
-<hr />
-<h3 id="transaksi-get">Transaksi — GET<a class="headerlink" href="#transaksi-get" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GET {base}/api/v2/otomax/trx?product={product}&amp;dest={dest}&amp;refID={refID}&amp;memberID={memberID}&amp;pin={pin}&amp;password={password}
+<p>Integrasi untuk software <strong>OtoMax</strong>: request <strong>GET</strong>, balasan <strong>teks polos</strong> (<code>text/plain</code>), bukan JSON Digiflazz.</p>
+<p>Base URL:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://idv-api.pixlycode.app
 </code></pre></div>
-<p>Open denom (qty = <strong>nominal</strong>, bukan jumlah pembelian):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>GET {base}/api/v2/otomax/trx?product={product}&amp;dest={dest}&amp;refID={refID}&amp;qty=50000&amp;memberID={memberID}&amp;pin={pin}&amp;password={password}
+<h2 id="prefix-alias">Prefix &amp; alias<a class="headerlink" href="#prefix-alias" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/v2/otomax</code></td>
+<td>Path utama</td>
+</tr>
+<tr>
+<td><code>/reseller/api/v2/otomax</code></td>
+<td><strong>Alias</strong> — URL lain ke <strong>handler yang sama</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Maksud alias:</strong> beberapa template OtoMax / IP Center memakai prefix lama bergaya <code>/reseller/api/...</code>. Agar tidak perlu ubah software, gateway mendaftarkan kedua path ke endpoint yang sama.</p>
+<p>Contoh ekuivalen:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://idv-api.pixlycode.app/api/v2/otomax/trx?...
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>https://idv-api.pixlycode.app/reseller/api/v2/otomax/trx?...
+</code></pre></div>
+<p>Cukup isi <strong>satu</strong> di IP Center (disarankan path utama <code>/api/v2/otomax/...</code>).</p>
+<p>Credential: <code>memberID</code>, <code>pin</code>, <code>password</code> (dari penyedia akun). IP server OtoMax harus di-whitelist.</p>
+<hr />
+<h2 id="transaksi-get">Transaksi — GET<a class="headerlink" href="#transaksi-get" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GET {base}/api/v2/otomax/trx?product={product}&amp;dest={dest}&amp;refID={refID}&amp;memberID={memberID}&amp;pin={pin}&amp;password={password}
+</code></pre></div>
+<p>Open denom (<code>qty</code> = <strong>nominal</strong>, bukan jumlah pembelian):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>GET {base}/api/v2/otomax/trx?product={product}&amp;dest={dest}&amp;refID={refID}&amp;qty=50000&amp;memberID={memberID}&amp;pin={pin}&amp;password={password}
 </code></pre></div>
 <table>
 <thead>
@@ -933,32 +1043,32 @@
 <tr>
 <td><code>product</code></td>
 <td>Ya</td>
-<td>Kode produk (sama <code>buyer_sku_code</code> / Code)</td>
+<td>Kode produk (= <code>buyer_sku_code</code>)</td>
 </tr>
 <tr>
 <td><code>dest</code></td>
 <td>Ya</td>
-<td>Nomor tujuan</td>
+<td>Nomor / ID tujuan</td>
 </tr>
 <tr>
 <td><code>refID</code></td>
 <td>Ya</td>
-<td>ID transaksi dari OtoMax (unik, idempotent)</td>
+<td>ID unik dari OtoMax (idempotent)</td>
 </tr>
 <tr>
 <td><code>memberID</code></td>
 <td>Ya</td>
-<td>Credential dari admin</td>
+<td>Credential</td>
 </tr>
 <tr>
 <td><code>pin</code></td>
 <td>Ya*</td>
-<td>Atau ganti dengan <code>sign</code></td>
+<td>Atau pakai <code>sign</code></td>
 </tr>
 <tr>
 <td><code>password</code></td>
 <td>Ya*</td>
-<td>Atau ganti dengan <code>sign</code></td>
+<td>Atau pakai <code>sign</code></td>
 </tr>
 <tr>
 <td><code>sign</code></td>
@@ -968,22 +1078,14 @@
 <tr>
 <td><code>qty</code></td>
 <td>Opsional</td>
-<td>Hanya open denom: isi <strong>nominal</strong> (mis. 50000)</td>
+<td>Open denom: nominal (mis. <code>50000</code>)</td>
 </tr>
 </tbody>
 </table>
 <p>* Jika <code>sign</code> diisi, <code>pin</code>/<code>password</code> boleh dikosongkan.</p>
-<h4 id="contoh-balasan-teks-content-type-textplain">Contoh balasan teks (Content-Type: text/plain)<a class="headerlink" href="#contoh-balasan-teks-content-type-textplain" title="Permanent link">&para;</a></h4>
-<p><strong>Pending (sedang diproses):</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>R#OMX001 TL5.0811222333 sedang diproses. Saldo: 90000
-</code></pre></div></p>
-<p><strong>Sukses:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>R#OMX001 TL5.0811222333 SUKSES. SN: SN123ABC. Harga: 5500. Saldo: 84500
-</code></pre></div></p>
-<p><strong>Gagal:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>R#OMX001 TL5.0811222333 GAGAL. Produk tidak ditemukan. Saldo: 90000
-</code></pre></div></p>
-<p>Setting parsing reply di OtoMax:</p>
+<hr />
+<h2 id="pola-parsing-reply-trx">Pola parsing reply (trx)<a class="headerlink" href="#pola-parsing-reply-trx" title="Permanent link">&para;</a></h2>
+<p>Setting di OtoMax:</p>
 <table>
 <thead>
 <tr>
@@ -1006,21 +1108,107 @@
 </tr>
 </tbody>
 </table>
+<h3 id="contoh-sukses-pending">Contoh — sukses / pending<a class="headerlink" href="#contoh-sukses-pending" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>R#OMX001 TL5.0811222333 SUKSES. SN: SN123ABC. Harga: 5500. Saldo: 84500
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>R#OMX001 TL5.0811222333 sedang diproses. Saldo: 90000
+</code></pre></div>
+<h3 id="contoh-semua-pesan-gagal-pesan">Contoh — semua pesan gagal (<code>{pesan}</code>)<a class="headerlink" href="#contoh-semua-pesan-gagal-pesan" title="Permanent link">&para;</a></h3>
+<p><strong>Validasi / auth OtoMax</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>R#OMX001 TL5.0811222333 GAGAL. product, dest, dan refID wajib. Saldo: 0
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>R#OMX001 TL5.0811222333 GAGAL. memberID wajib. Saldo: 0
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>R#OMX001 TL5.0811222333 GAGAL. memberID tidak valid atau nonaktif. Saldo: 0
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>R#OMX001 TL5.0811222333 GAGAL. Server type member bukan otomax. Saldo: 0
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>R#OMX001 TL5.0811222333 GAGAL. IP tidak diizinkan. Saldo: 0
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>R#OMX001 TL5.0811222333 GAGAL. pin/password/sign tidak valid. Saldo: 0
+</code></pre></div>
+<p><strong>Bisnis / katalog / saldo / tujuan</strong> (dari mapping gateway)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>R#OMX001 TL5.0811222333 GAGAL. Nomor Tujuan Salah. Saldo: 90000
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>R#OMX001 TL5.0811222333 GAGAL. SKU tidak ditemukan atau Non-Aktif. Saldo: 90000
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>R#OMX001 TL5.0811222333 GAGAL. Produk sedang Gangguan (Non Aktif). Saldo: 90000
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>R#OMX001 TL5.0811222333 GAGAL. Saldo tidak cukup. Saldo: 1000
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>R#OMX001 FF.12345 GAGAL. Game ID tidak ditemukan. Saldo: 90000
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>R#OMX001 FF.12345 GAGAL. ID Game tidak valid. Saldo: 90000
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>R#OMX001 FF.12345 GAGAL. ID tidak ditemukan dalam sistem. Saldo: 90000
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>R#OMX001 TL5.0811222333 GAGAL. Signature tidak valid. Saldo: 90000
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>R#OMX001 TL5.0811222333 GAGAL. User tidak valid atau tidak aktif. Saldo: 90000
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>R#OMX001 TL5.0811222333 GAGAL. Denom tidak valid. Saldo: 90000
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>R#OMX001 TL5.0811222333 GAGAL. Reference ID sudah digunakan. Saldo: 90000
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>R#OMX001 TL5.0811222333 GAGAL. Transaksi Dibatalkan. Saldo: 90000
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>R#OMX001 TL5.0811222333 GAGAL. OTP Error. Saldo: 90000
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>R#OMX001 TL5.0811222333 GAGAL. IP Anda tidak kami kenali. Saldo: 90000
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>R#OMX001 TL5.0811222333 GAGAL. Transaksi Gagal. Saldo: 90000
+</code></pre></div>
+<h3 id="tabel-rc-pesan-callback-mapping-internal">Tabel RC ↔ pesan (callback / mapping internal)<a class="headerlink" href="#tabel-rc-pesan-callback-mapping-internal" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>RC</th>
+<th>Pesan (<code>{pesan}</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>54</code></td>
+<td>Nomor Tujuan Salah</td>
+</tr>
+<tr>
+<td><code>16</code> / <code>43</code></td>
+<td>SKU tidak ditemukan atau Non-Aktif</td>
+</tr>
+<tr>
+<td><code>10</code></td>
+<td>Produk sedang Gangguan (Non Aktif)</td>
+</tr>
+<tr>
+<td><code>17</code></td>
+<td>Saldo tidak cukup</td>
+</tr>
+<tr>
+<td><code>55</code></td>
+<td>Game ID tidak ditemukan</td>
+</tr>
+<tr>
+<td><code>02</code></td>
+<td>ID Game tidak valid / ID tidak ditemukan / Signature tidak valid / User tidak valid / Denom tidak valid / Reference ID sudah digunakan / OTP Error / Transaksi Gagal</td>
+</tr>
+<tr>
+<td><code>32</code></td>
+<td>Transaksi Dibatalkan</td>
+</tr>
+<tr>
+<td><code>18</code></td>
+<td>IP Anda tidak kami kenali</td>
+</tr>
+<tr>
+<td><code>00</code></td>
+<td>Sukses (bukan GAGAL)</td>
+</tr>
+<tr>
+<td><code>03</code></td>
+<td>Pending → teks <em>sedang diproses</em></td>
+</tr>
+</tbody>
+</table>
 <p><code>refID</code> yang sama tidak diproses dua kali — kirim ulang mengembalikan status terkini.</p>
 <hr />
-<h3 id="cek-saldo-get">Cek saldo — GET<a class="headerlink" href="#cek-saldo-get" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>GET {base}/api/v2/otomax/balance?memberID={memberID}&amp;pin={pin}&amp;password={password}
+<h2 id="cek-saldo-get">Cek saldo — GET<a class="headerlink" href="#cek-saldo-get" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>GET {base}/api/v2/otomax/balance?memberID={memberID}&amp;pin={pin}&amp;password={password}
 </code></pre></div>
-<p><strong>Sukses:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Saldo: 90000
-</code></pre></div></p>
-<p><strong>Gagal auth:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>GAGAL. pin/password/sign tidak valid
-</code></pre></div></p>
+<p><strong>Sukses</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Saldo: 90000
+</code></pre></div>
+<p><strong>Gagal</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>GAGAL. memberID wajib
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>GAGAL. memberID tidak valid atau nonaktif
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>GAGAL. Server type member bukan otomax
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>GAGAL. IP tidak diizinkan
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>GAGAL. pin/password/sign tidak valid
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>GAGAL. Gagal cek saldo
+</code></pre></div>
 <hr />
-<h3 id="report-hasil-akhir-callback-get">Report hasil akhir (callback GET)<a class="headerlink" href="#report-hasil-akhir-callback-get" title="Permanent link">&para;</a></h3>
-<p>Jika member <code>connection_type=otomax</code> dan transaksi punya <code>cb_url</code>, gateway mengirim <strong>GET</strong> (bukan POST JSON Digiflazz):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>GET {cb_url}?rc=00&amp;code=TL5&amp;msg=SUKSES&amp;msisdn=0811222333&amp;sn=SN123ABC&amp;request_id=OMX001&amp;price=5500&amp;trxid=16413&amp;saldo=84500
+<h2 id="report-hasil-akhir-callback-get">Report hasil akhir (callback GET)<a class="headerlink" href="#report-hasil-akhir-callback-get" title="Permanent link">&para;</a></h2>
+<p>Jika transaksi punya callback URL dan akun mode OtoMax, gateway mengirim <strong>GET</strong> (bukan POST JSON):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>GET {cb_url}?rc=00&amp;code=TL5&amp;msg=SUKSES&amp;msisdn=0811222333&amp;sn=SN123ABC&amp;request_id=OMX001&amp;price=5500&amp;trxid=16413&amp;saldo=84500
 </code></pre></div>
 <table>
 <thead>
@@ -1032,7 +1220,7 @@
 <tbody>
 <tr>
 <td><code>rc</code></td>
-<td><code>00</code> sukses, lainnya gagal/pending</td>
+<td><code>00</code> sukses; lainnya lihat tabel RC</td>
 </tr>
 <tr>
 <td><code>code</code></td>
@@ -1044,7 +1232,7 @@
 </tr>
 <tr>
 <td><code>msisdn</code></td>
-<td>Nomor tujuan</td>
+<td>Nomor tujuan (<code>dest</code>)</td>
 </tr>
 <tr>
 <td><code>sn</code></td>
@@ -1060,7 +1248,7 @@
 </tr>
 <tr>
 <td><code>trxid</code></td>
-<td>ID internal transaksi gateway</td>
+<td>ID internal gateway</td>
 </tr>
 <tr>
 <td><code>saldo</code></td>
@@ -1069,13 +1257,16 @@
 </tbody>
 </table>
 <hr />
-<h3 id="ip-center-contoh">IP Center (contoh)<a class="headerlink" href="#ip-center-contoh" title="Permanent link">&para;</a></h3>
-<p>Transaksi:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>https://idv-api.pixlycode.app/api/v2/otomax/trx?product=[product]&amp;dest=[tujuan]&amp;refID=[trxid]&amp;memberID={memberID}&amp;pin={pin}&amp;password={password}
-</code></pre></div></p>
-<p>Saldo:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>https://idv-api.pixlycode.app/api/v2/otomax/balance?memberID={memberID}&amp;pin={pin}&amp;password={password}
-</code></pre></div></p>
+<h2 id="ip-center-contoh">IP Center (contoh)<a class="headerlink" href="#ip-center-contoh" title="Permanent link">&para;</a></h2>
+<p>Transaksi:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>https://idv-api.pixlycode.app/api/v2/otomax/trx?product=[product]&amp;dest=[tujuan]&amp;refID=[trxid]&amp;memberID={memberID}&amp;pin={pin}&amp;password={password}
+</code></pre></div>
+<p>Saldo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>https://idv-api.pixlycode.app/api/v2/otomax/balance?memberID={memberID}&amp;pin={pin}&amp;password={password}
+</code></pre></div>
+<p>(Opsional alias reseller — sama fungsinya:)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>https://idv-api.pixlycode.app/reseller/api/v2/otomax/trx?...
+</code></pre></div>
 <p>Daftarkan IP server OtoMax ke <strong>IP whitelist</strong> akun API Anda (minta ke penyedia gateway).</p>
 
 
