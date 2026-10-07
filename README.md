@@ -1,34 +1,25 @@
-# MkDocs Documentation
+# IDV Open API Docs (public)
 
-Dokumentasi project ini dibuat dengan **MkDocs Material**.
+Dokumentasi **Open API** untuk integrator — dipublikasikan di:
 
-## Lihat di UI (online)
+**https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/**
 
-**GitHub Pages:** [https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/](https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/)
+Repo ini **sengaja tidak** berisi panduan Docker, arsitektur internal, atau setup proyek. Dokumentasi produk/internal tetap di repo privat (`IDV/docs`).
 
-## Struktur penting
-
-- `docs/mkdocs.yml` — konfigurasi MkDocs + tema
-- `docs/content/` — halaman Markdown
-- `docs/overrides/` — template (announce bar)
-- `docs/content/stylesheets/extra.css` — desain kustom
-- `site/` — output build (di root project)
-
-## Cara menjalankan lokal
-
-Dari root project (`IDV/`):
+## Lokal
 
 ```bash
 pip install -r requirements-docs.txt
-mkdocs serve -f docs/mkdocs.yml
+mkdocs serve
+mkdocs gh-deploy --force   # publish ke branch gh-pages
 ```
 
-Buka biasanya `http://127.0.0.1:8000`.
+## Desain UI (pakai ulang di project lain)
 
-## Build statis
+| Item | Nama / lokasi |
+|------|----------------|
+| Framework tema | **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)** (`mkdocs-material`) |
+| Skin kustom | **Pixly Teal** (nama internal) — bukan palette bawaan Material |
+| File yang di-copy | `mkdocs.yml` (blok `theme` + `extra_css` + `markdown_extensions`), `overrides/`, `content/stylesheets/extra.css`, `requirements-docs.txt` |
 
-```bash
-mkdocs build -f docs/mkdocs.yml
-```
-
-Deploy ke GitHub Pages: publish isi folder `site/` ke branch/pages yang dipakai repo [Indosat-Digital-Voucher-IDV-](https://github.com/maulana222/Indosat-Digital-Voucher-IDV-).
+Warna utama: teal `#0f3d3e`, aksen amber `#c45c26`, font **DM Sans** + **JetBrains Mono**.

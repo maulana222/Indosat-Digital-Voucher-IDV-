@@ -1,58 +1,37 @@
-## Quickstart
+# Memulai (integrator)
 
-Baca versi UI online: [Dokumentasi IDV Gateway](https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/)
+## Prasyarat
 
-### Prasyarat
+- Akses API dari penyedia: `username`, `api_key`
+- IP server Anda didaftarkan di **whitelist** API key
+- (Opsional) URL callback HTTPS yang bisa menerima `POST` JSON atau `GET` OtoMax
 
-- Node.js (untuk backend dan dashboard)
-- MySQL (untuk database)
-- Setelah clone: jalankan migrasi DB (`cd backend && npm run migrate`) termasuk **028–029**
+## Base URL
 
-### Menjalankan backend
-
-1. Masuk ke folder `backend/`
-2. Buat file `.env` (lihat halaman **Konfigurasi**)
-3. Install dependency dan jalankan:
-
-```bash
-npm install
-npm start
+```text
+https://idv-api.pixlycode.app
 ```
 
-Production API: `https://idv-api.pixlycode.app`  
-Lokal default port: `6969`
+## Pilih mode integrasi
 
-### Menjalankan dashboard
+=== "API Digiflazz-style (JSON)"
 
-1. Masuk ke folder `dashboard.idv/`
-2. Install dependency dan jalankan:
+    Pakai `POST /api/transaction`, `/api/price-list`, `/api/product-detail` dengan signature MD5.  
+    Lihat [Autentikasi](authentication.md) dan [Transaksi](api/transaction.md).
 
-```bash
-npm install
-npm run dev
-```
+=== "OtoMax (HTTP GET)"
 
-### Menjalankan dokumentasi (MkDocs)
+    Arahkan **IP Center** OtoMax ke gateway. Credential: `memberID`, `pin`, `password`.  
+    Lihat [OtoMax](api/otomax.md).
 
-File konfigurasi: `docs/mkdocs.yml`. Isi halaman Markdown ada di `docs/content/` (syarat MkDocs: `docs_dir` harus subfolder, bukan folder yang sama dengan config).
-
-Jalankan dari **root project** (`IDV/`):
+## Tes cepat
 
 ```bash
-pip install -r requirements-docs.txt
-mkdocs serve -f docs/mkdocs.yml
+curl -X POST "https://idv-api.pixlycode.app/api/price-list" \
+  -H "Content-Type: application/json" \
+  -d "{\"username\":\"YOUR_USER\",\"sign\":\"YOUR_SIGN\"}"
 ```
 
-Atau dari folder `docs/`:
+`sign` = `md5(username + api_key + "pricelist")` (hex).
 
-```bash
-cd docs
-mkdocs serve
-```
-
-Build statis (output di `site/` di root project):
-
-```bash
-mkdocs build -f docs/mkdocs.yml
-```
-
+Jika IP belum di-whitelist, request akan ditolak.

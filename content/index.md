@@ -1,41 +1,38 @@
-# IDV Gateway
+# IDV Open API
 
-Server API yang menjembatani sistem Anda dengan **Indosat Digital Voucher (IDV)**, plus dashboard multi-admin untuk monitoring dan konfigurasi.
+Dokumentasi **integrasi client** ke gateway transaksi. Cocok untuk sistem Digiflazz-style, OtoMax, atau middleware Anda sendiri.
 
-[Quickstart](getting-started.md){ .md-button .md-button--primary }
-[Dokumentasi online](https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/){ .md-button }
+Base URL production:
 
----
+```text
+https://idv-api.pixlycode.app
+```
 
-### Backend API
-
-Transaksi Digiflazz-style, OtoMax GET, callback, katalog produk, session IDV (cookie / H2H).
-
-### Dashboard
-
-Login JWT, transaksi, statistik, Account Settings, Koneksi Cookie/H2H per admin.
-
-### Isolasi per admin
-
-Harga, cookie, kredensial H2H, dan upstream transaksi terikat `user_id` pemilik — tidak saling pakai. Baca [Isolasi per admin](architecture/per-admin.md).
+[Memulai](getting-started.md){ .md-button .md-button--primary }
+[Transaksi](api/transaction.md){ .md-button }
 
 ---
 
-## Konsep penting
+### Endpoint publik
 
-- **Public transaksi**: `POST /api/transaction` (signature MD5) atau OtoMax `GET /api/v2/otomax/*`
-- **Dashboard / private**: JWT `Authorization: Bearer ...`
-- **Upstream ke IDV**: tiap admin memilih **Cookie** atau **H2H Nuon** di halaman Koneksi
-- **Tipe client**: `api` (POST Digiflazz) atau `otomax` (GET) di Account Settings
+| API | Method | Path |
+|-----|--------|------|
+| Transaksi | `POST` | `/api/transaction` |
+| Price list | `POST` | `/api/price-list` |
+| Product detail | `POST` | `/api/product-detail` |
+| OtoMax trx | `GET` | `/api/v2/otomax/trx` |
+| OtoMax saldo | `GET` | `/api/v2/otomax/balance` |
+| Callback | — | URL Anda (kami yang memanggil) |
 
-## Baca selanjutnya
+### Yang tidak dibahas di sini
 
-| Halaman | Isi |
-|---------|-----|
-| [Fitur](features.md) | Ringkasan kemampuan |
-| [Isolasi per admin](architecture/per-admin.md) | Keamanan multi-tenant |
-| [Upstream H2H](architecture/upstream-h2h.md) | Adapter cookie vs Nuon |
-| [OtoMax](api/otomax.md) | Integrasi HTTP GET |
-| [Security](security.md) | Checklist production |
+Dokumen ini **bukan** panduan instalasi server, Docker, dashboard admin, atau arsitektur internal. Hal tersebut bersifat privat untuk pemilik produk.
 
-Dokumentasi UI (GitHub Pages): [maulana222.github.io/Indosat-Digital-Voucher-IDV-](https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/)
+---
+
+## Alur singkat
+
+1. Dapatkan `username` + `api_key` (+ whitelist IP) dari penyedia gateway.
+2. Panggil Price List / Product Detail untuk SKU & harga.
+3. Kirim Transaksi dengan `sign` MD5.
+4. Terima response sync (`PENDING` / `FAILED` / …) dan **callback** ke `cb_url` saat status final.

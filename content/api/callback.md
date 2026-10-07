@@ -1,24 +1,13 @@
-## Callback
+# Callback
 
-Setelah status transaksi berubah, gateway mengirim notifikasi ke URL callback client.
+Gateway memanggil URL Anda ketika status transaksi berubah (terutama ke `SUCCESS` / `FAILED`).
 
-### Sumber URL
+## URL callback
 
-1. Field `cb_url` pada request transaksi (prioritas), atau
-2. `users.default_cb_url` dari **Account Settings** jika `cb_url` kosong.
+1. Field `cb_url` pada request transaksi, atau  
+2. Default callback yang dikonfigurasi di akun Anda (jika `cb_url` kosong).
 
-### Format menurut tipe koneksi
-
-| `connection_type` | Method | Format |
-|-------------------|--------|--------|
-| `api` (default) | `POST` | JSON Digiflazz `{ "data": { ... } }` |
-| `otomax` | `GET` | Querystring OtoMax (`rc`, `code`, `msg`, `msisdn`, `sn`, …) |
-
-Pemilik ditentukan dari `transactions.user_id` / `username`.
-
----
-
-### Digiflazz — POST JSON
+## Mode API (Digiflazz-style) — POST JSON
 
 - Method: `POST`
 - Content-Type: `application/json`
@@ -39,18 +28,19 @@ Pemilik ditentukan dari `transactions.user_id` / `username`.
 }
 ```
 
-Contoh gagal: `status` = `FAILED`, `rc` sesuai error, `sn` kosong.
+Contoh gagal: `status` = `FAILED`, `sn` biasanya kosong.
 
-Field `status`: `PENDING` | `SUCCESS` | `FAILED` | `CANCELLED`.
+Nilai `status`: `PENDING` | `SUCCESS` | `FAILED` | `CANCELLED`.
 
----
+!!! tip "Praktik terbaik"
+    Endpoint callback harus idempotent (bisa menerima ulang notifikasi yang sama) dan merespons HTTP 2xx cepat.
 
-### OtoMax — GET querystring
+## Mode OtoMax — GET querystring
 
-Contoh:
+Jika akun memakai tipe OtoMax, callback dikirim sebagai **GET** dengan querystring. Contoh:
 
 ```text
 GET {callback_url}?rc=00&code=TL5&msg=SUKSES&msisdn=0811222333&sn=SN123&request_id=OMX001&price=5500&trxid=16413&saldo=84500
 ```
 
-Detail field: [OtoMax](otomax.md).
+Detail: [OtoMax](otomax.md).

@@ -1,26 +1,15 @@
-## OtoMax (HTTP GET) — Mode Kompatibilitas
+# OtoMax (HTTP GET)
 
 Prefix:
 
 - `/api/v2/otomax`
 - Alias: `/reseller/api/v2/otomax`
 
-Untuk reseller yang memakai software **OtoMax**: tidak perlu integrasi API JSON Digiflazz. Arahkan **IP Center** OtoMax ke gateway ini.
+Untuk reseller yang memakai software **OtoMax**: tidak perlu integrasi JSON Digiflazz-style. Arahkan **IP Center** OtoMax ke gateway ini.
 
-Mode ini memakai credential khusus (`memberID`, `pin`, `password`) yang di-generate saat tipe koneksi di-set ke **otomax**. Allowed IP (whitelist) dan Callback URL diatur di **Account Settings**.
+Credential: `memberID`, `pin`, `password` (dari penyedia akun). IP server OtoMax harus di-whitelist.
 
-> Tipe koneksi: `api` (POST Digiflazz) atau `otomax` (GET). Admin bisa memilih sendiri di Account Settings. Upstream ke IDV (cookie/H2H) tetap di halaman **Koneksi**.
-
----
-
-### Credential & setting — di mana?
-
-| Siapa | Di mana |
-|-------|---------|
-| **Admin / member** | **Account Settings**: pilih mode OtoMax, isi IP + callback, lihat/copy credential & URL IP Center |
-| **Super Admin** | Sama + menu **Anggota → Detail** (atur tipe koneksi anggota lain) |
-
-Credential OtoMax muncul setelah mode di-set ke `otomax`.
+Base: `https://idv-api.pixlycode.app`
 
 ---
 

@@ -1,13 +1,11 @@
-site_name: IDV Gateway
-site_description: Dokumentasi IDV Gateway — API transaksi, OtoMax, H2H, dan dashboard multi-admin
+site_name: IDV Open API
+site_description: Dokumentasi Open API untuk integrasi transaksi, price list, product detail, callback, dan OtoMax
 site_url: https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/
 repo_url: https://github.com/maulana222/Indosat-Digital-Voucher-IDV-
 repo_name: maulana222/Indosat-Digital-Voucher-IDV-
-edit_uri: edit/main/docs/content/
+edit_uri: ""
 
-# MkDocs melarang docs_dir sama dengan folder config; halaman ada di subfolder
 docs_dir: content
-# Output build di root project (bukan di dalam docs/)
 site_dir: site
 
 theme:
@@ -45,7 +43,7 @@ theme:
     - toc.follow
   icon:
     repo: fontawesome/brands/github
-    logo: material/lan-connect
+    logo: material/api
 
 extra_css:
   - stylesheets/extra.css
@@ -54,7 +52,7 @@ extra:
   social:
     - icon: material/web
       link: https://maulana222.github.io/Indosat-Digital-Voucher-IDV-/
-      name: Dokumentasi online
+      name: Open API docs
   generator: false
 
 markdown_extensions:
@@ -65,11 +63,7 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.details
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.highlight:
@@ -84,20 +78,11 @@ plugins:
 
 nav:
   - Beranda: index.md
-  - Fitur: features.md
-  - Quickstart: getting-started.md
-  - Docker: docker.md
-  - Konfigurasi: configuration.md
-  - Architecture:
-      - Isolasi per admin: architecture/per-admin.md
-      - Upstream H2H: architecture/upstream-h2h.md
-  - API:
-      - Ringkasan: api/overview.md
-      - Auth: api/auth.md
-      - Transaction: api/transaction.md
-      - OtoMax (HTTP GET): api/otomax.md
-      - Price List: api/price-list.md
-      - Product Detail: api/product-detail.md
-      - Callback: api/callback.md
-      - IDV: api/idv.md
-  - Security: security.md
+  - Memulai: getting-started.md
+  - Autentikasi: authentication.md
+  - Transaksi: api/transaction.md
+  - Price List: api/price-list.md
+  - Product Detail: api/product-detail.md
+  - Callback: api/callback.md
+  - OtoMax: api/otomax.md
+  - Status & RC: api/status-codes.md

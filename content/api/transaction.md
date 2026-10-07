@@ -1,12 +1,15 @@
-## Transaction API
-
-Prefix: `/api/transaction`
-
-### Membuat transaksi (public)
+# Transaksi
 
 `POST /api/transaction`
 
-Body minimal:
+Membuat transaksi topup/voucher. Proses sering **async**: response awal bisa `PENDING`, hasil akhir dikirim ke [Callback](callback.md).
+
+## Request
+
+```http
+POST https://idv-api.pixlycode.app/api/transaction
+Content-Type: application/json
+```
 
 ```json
 {
@@ -21,14 +24,22 @@ Body minimal:
 }
 ```
 
-Catatan signature:
+| Field | Wajib | Keterangan |
+|-------|-------|------------|
+| `username` | Ya | Username API |
+| `ref_id` | Ya | ID unik dari sisi Anda (idempotent) |
+| `sign` | Ya | `md5(username + api_key + ref_id)` |
+| `buyer_sku_code` | Ya | Kode produk / SKU |
+| `customer_no` | Ya | Tujuan (nomor / game id) |
+| `max_price` | Tidak* | Batas harga; gunakan harga dari price-list |
+| `allow_dot` | Tidak | Default mengikuti aturan produk |
+| `cb_url` | Tidak | Callback; jika kosong bisa memakai default di akun |
 
-- Payload: `username + api_key + ref_id`
-- Hash: MD5 (hex)
+\* Disarankan selalu mengirim `max_price` sesuai harga aktif di price-list.
 
-### Response (sama format dengan callback)
+## Response
 
-HTTP `200`. Body identik dengan payload yang dikirim ke `cb_url`:
+HTTP `200`. Body sama bentuknya dengan payload callback:
 
 ```json
 {
@@ -46,36 +57,29 @@ HTTP `200`. Body identik dengan payload yang dikirim ke `cb_url`:
 }
 ```
 
-Nilai `status` / `rc` yang umum:
-
-| Kondisi | status | rc |
-|---------|--------|-----|
-| Diterima, diproses async | `PENDING` | `03` |
+| Kondisi | `status` | `rc` (umum) |
+|---------|----------|-------------|
+| Diterima, diproses | `PENDING` | `03` |
 | Sukses | `SUCCESS` | `00` |
-| Gagal (user/sign/dll.) | `FAILED` | sesuai mapping error |
+| Gagal | `FAILED` | lihat [Status & RC](status-codes.md) |
 
-### Ambil list transaksi (private)
-
-`GET /api/transaction?limit=10&offset=0`
+## Contoh curl
 
 ```bash
-curl "https://idv-api.pixlycode.app/api/transaction?limit=10&offset=0" \
-  -H "Authorization: Bearer <jwt>"
+curl -X POST "https://idv-api.pixlycode.app/api/transaction" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"username\": \"client_username\",
+    \"ref_id\": \"unique_ref_123\",
+    \"sign\": \"SIGN_HEX\",
+    \"buyer_sku_code\": \"freefire_60_idv\",
+    \"customer_no\": \"3412409703\",
+    \"max_price\": 10000,
+    \"cb_url\": \"https://client.example.com/callback\"
+  }"
 ```
 
-### Statistik (private)
+## Catatan
 
-`GET /api/transaction/statistics`
-
-### Logs (private)
-
-- `GET /api/transaction/:id/logs`
-- `GET /api/transaction/ref/:refId/logs`
-- `GET /api/transaction/detail/:detailId/logs`
-
-### Cancel / Retry (private)
-
-- `PUT /api/transaction/:id/cancel`
-- `POST /api/transaction/batch-cancel`
-- `POST /api/transaction/:id/retry`
-
+- Ulangi `ref_id` yang sama → perilaku idempotent (status yang sudah ada dikembalikan / diproses sesuai aturan gateway).
+- SN sukses ada di field `sn` (response final / callback).
