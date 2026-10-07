@@ -1,8 +1,8 @@
 # Status & response code (RC)
 
-Field penting di response transaksi / callback: `status`, `rc`, `message`, `sn`.
+Berlaku untuk **API JSON** (`POST /api/transaction` + callback Digiflazz) dan mapping yang sama dipakai teks OtoMax `GAGAL. {pesan}`.
 
-## Status
+## Status (JSON)
 
 | `status` | Arti |
 |----------|------|
@@ -11,20 +11,33 @@ Field penting di response transaksi / callback: `status`, `rc`, `message`, `sn`.
 | `FAILED` | Gagal |
 | `CANCELLED` | Dibatalkan |
 
-## RC yang sering muncul
+## RC & pesan lengkap
 
-| `rc` | Arti umum |
+| `rc` | `message` |
 |------|-----------|
-| `00` | Sukses |
-| `03` | Pending / diproses |
-| `02` | Gagal umum / dibatalkan |
-| `16` | SKU tidak ditemukan / non-aktif |
-| Lainnya | Ikuti `message` pada payload |
+| `00` | (sukses — bukan error) |
+| `03` | Transaksi Pending / sedang diproses |
+| `54` | Nomor Tujuan Salah |
+| `16` | SKU tidak ditemukan atau Non-Aktif |
+| `43` | SKU tidak ditemukan atau Non-Aktif |
+| `10` | Produk sedang Gangguan (Non Aktif) |
+| `17` | Saldo tidak cukup |
+| `55` | Game ID tidak ditemukan |
+| `02` | ID Game tidak valid |
+| `02` | ID tidak ditemukan dalam sistem |
+| `02` | Signature tidak valid |
+| `02` | User tidak valid atau tidak aktif |
+| `02` | Denom tidak valid |
+| `02` | Reference ID sudah digunakan |
+| `02` | OTP Error |
+| `02` | Transaksi Gagal |
+| `32` | Transaksi Dibatalkan |
+| `18` | IP Anda tidak kami kenali |
 
-!!! note
-    Mapping RC lengkap dapat ditambah sesuai paket error penyedia. Selalu andalkan kombinasi `status` + `message`, jangan hanya `rc`.
+!!! tip "OtoMax"
+    Lihat contoh teks lengkap di halaman [OtoMax](otomax.md) — pola `R#… GAGAL. {pesan}. Saldo: …`.
 
 ## Idempotensi
 
-- `ref_id` harus unik per transaksi baru.
-- Mengirim ulang `ref_id` yang sama tidak boleh membuat charge ganda; server mengembalikan / mengikuti transaksi yang sudah ada.
+- `ref_id` / `refID` harus unik per transaksi baru.
+- Kirim ulang ID yang sama mengikuti transaksi yang sudah ada (tidak charge ganda).
